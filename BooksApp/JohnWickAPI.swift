@@ -80,6 +80,8 @@ class JohnWickAPI {
         }
         
         var book: Book!
+        
+        //performAndWait means do it now and I will wait for you to finish.  Inserting Book object into the context.
         context.performAndWait({ () -> Void in
             book = NSEntityDescription.insertNewObject(forEntityName: Book.entityName,
                                                        into: context) as! Book

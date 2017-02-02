@@ -12,6 +12,8 @@ import CoreData
 
 class CoreDataStack {
     
+    
+    //Get the managedObjectModel from Disk
     let managedObjectModelName: String
     
     required init(modelName: String) {
@@ -31,6 +33,7 @@ class CoreDataStack {
         return urls.first!
     }()
     
+    //Needs the managedObjectModel to get objects out of the PersistentStore
     fileprivate lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         
         var coordinator =
@@ -47,7 +50,7 @@ class CoreDataStack {
         
         return coordinator
     }()
-    
+    //Every Managed Object Context is a staging area.  If you don't save it will go away
     lazy var mainQueueContext: NSManagedObjectContext = {
         
         let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -56,7 +59,7 @@ class CoreDataStack {
         
         return moc
     }()
-    
+    //privateCont
     lazy var privateQueueContext: NSManagedObjectContext = {
         
         let moc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
@@ -68,7 +71,7 @@ class CoreDataStack {
     
     func saveChanges() throws {
         var optionalError: Error?
-        
+        //typically do privateQueue first because you want things going on in the background
         privateQueueContext.performAndWait { () -> Void in
             if self.privateQueueContext.hasChanges {
                 do {

@@ -14,6 +14,7 @@ enum BookResult {
     case failure(Error)
 }
 
+//Dont have to save in this app!!!!!!!!!
 class BookStore {
     let imageStore = ImageStore<String>()
     let coreDataStack: CoreDataStack
@@ -38,25 +39,24 @@ extension BookStore {
         return JohnWickAPI.booksFromJSONData(jsonData, inContext: self.coreDataStack.privateQueueContext)
     }
     
-     func fetchMainQueuePosts(predicate: NSPredicate? = nil,
-                                      sortDescriptors: [NSSortDescriptor]? = nil) throws -> [Book] {
+     func fetchMainQueueBooks(predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [Book] {
         
         let fetchRequest = NSFetchRequest<Book>(entityName: "Book")
         fetchRequest.sortDescriptors = sortDescriptors
         
         let mainQueueContext = self.coreDataStack.mainQueueContext
-        var mainQueuePost: [Book]?
+        var mainQueueBook: [Book]?
         var fetchRequestError: Error?
         mainQueueContext.performAndWait({
             do {
-                mainQueuePost = try mainQueueContext.fetch(fetchRequest)
+                mainQueueBook = try mainQueueContext.fetch(fetchRequest)
             }
             catch let error {
                 fetchRequestError = error
             }
         })
         
-        guard let post = mainQueuePost else {
+        guard let post = mainQueueBook else {
             throw fetchRequestError!
         }
         
@@ -72,20 +72,18 @@ extension BookStore {
             
             var result = self.processBooksRequest(data: data, error: error as NSError?)
             
-            if case let .success(posts) = result {
+            if case let .success(books) = result {
                 let privateQueueContext = self.coreDataStack.privateQueueContext
                 privateQueueContext.performAndWait({
-                    try! privateQueueContext.obtainPermanentIDs(for: posts)
+                    try! privateQueueContext.obtainPermanentIDs(for: books)
                 })
-                let objectIDs = posts.map{ $0.objectID }
-                let predicate = NSPredicate(format: "self IN %@", objectIDs)
-                let sortByDateTaken = NSSortDescriptor(key: "createdAt", ascending: false)
+                let objectIDs = books.map{ $0.objectID }
+                //may need predicate to prevent duplication
                 
                 do {
                     try self.coreDataStack.saveChanges()
                     
-                    let mainQueuePosts = try self.fetchMainQueuePosts(predicate: predicate,
-                                                                      sortDescriptors: [sortByDateTaken])
+                    let mainQueuePosts = try self.fetchMainQueueBooks(predicate: nil, sortDescriptors: [])
                     result = .success(mainQueuePosts)
                 }
                 catch let error {
