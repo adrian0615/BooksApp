@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		074B8C2D1E428EE3000B76BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C2C1E428EE3000B76BA /* AppDelegate.swift */; };
-		074B8C2F1E428EE3000B76BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C2E1E428EE3000B76BA /* ViewController.swift */; };
 		074B8C321E428EE3000B76BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074B8C301E428EE3000B76BA /* Main.storyboard */; };
 		074B8C341E428EE3000B76BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074B8C331E428EE3000B76BA /* Assets.xcassets */; };
 		074B8C371E428EE3000B76BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074B8C351E428EE3000B76BA /* LaunchScreen.storyboard */; };
 		074B8C421E428EE3000B76BA /* BooksAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C411E428EE3000B76BA /* BooksAppTests.swift */; };
 		074B8C4D1E428EE3000B76BA /* BooksAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C4C1E428EE3000B76BA /* BooksAppUITests.swift */; };
+		074B8C5C1E428F0B000B76BA /* Books.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C5A1E428F0B000B76BA /* Books.xcdatamodeld */; };
+		074B8C5F1E428F60000B76BA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C5D1E428F60000B76BA /* Book+CoreDataClass.swift */; };
+		074B8C601E428F60000B76BA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C5E1E428F60000B76BA /* Book+CoreDataProperties.swift */; };
+		074B8C621E4290BA000B76BA /* JohnWickAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C611E4290BA000B76BA /* JohnWickAPI.swift */; };
+		074B8C641E42974A000B76BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C631E42974A000B76BA /* CoreDataStack.swift */; };
+		074B8C661E4297DC000B76BA /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C651E4297DC000B76BA /* ImageStore.swift */; };
+		074B8C681E42984B000B76BA /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B8C671E42984B000B76BA /* BookStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		074B8C291E428EE3000B76BA /* BooksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		074B8C2C1E428EE3000B76BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		074B8C2E1E428EE3000B76BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		074B8C311E428EE3000B76BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		074B8C331E428EE3000B76BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		074B8C361E428EE3000B76BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,13 @@
 		074B8C481E428EE3000B76BA /* BooksAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		074B8C4C1E428EE3000B76BA /* BooksAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAppUITests.swift; sourceTree = "<group>"; };
 		074B8C4E1E428EE3000B76BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		074B8C5B1E428F0B000B76BA /* Books.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Books.xcdatamodel; sourceTree = "<group>"; };
+		074B8C5D1E428F60000B76BA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		074B8C5E1E428F60000B76BA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		074B8C611E4290BA000B76BA /* JohnWickAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnWickAPI.swift; sourceTree = "<group>"; };
+		074B8C631E42974A000B76BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		074B8C651E4297DC000B76BA /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		074B8C671E42984B000B76BA /* BookStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +109,14 @@
 		074B8C2B1E428EE3000B76BA /* BooksApp */ = {
 			isa = PBXGroup;
 			children = (
+				074B8C5D1E428F60000B76BA /* Book+CoreDataClass.swift */,
+				074B8C611E4290BA000B76BA /* JohnWickAPI.swift */,
+				074B8C671E42984B000B76BA /* BookStore.swift */,
+				074B8C5E1E428F60000B76BA /* Book+CoreDataProperties.swift */,
+				074B8C631E42974A000B76BA /* CoreDataStack.swift */,
+				074B8C651E4297DC000B76BA /* ImageStore.swift */,
 				074B8C2C1E428EE3000B76BA /* AppDelegate.swift */,
-				074B8C2E1E428EE3000B76BA /* ViewController.swift */,
+				074B8C5A1E428F0B000B76BA /* Books.xcdatamodeld */,
 				074B8C301E428EE3000B76BA /* Main.storyboard */,
 				074B8C331E428EE3000B76BA /* Assets.xcassets */,
 				074B8C351E428EE3000B76BA /* LaunchScreen.storyboard */,
@@ -259,7 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				074B8C2F1E428EE3000B76BA /* ViewController.swift in Sources */,
+				074B8C621E4290BA000B76BA /* JohnWickAPI.swift in Sources */,
+				074B8C5C1E428F0B000B76BA /* Books.xcdatamodeld in Sources */,
+				074B8C681E42984B000B76BA /* BookStore.swift in Sources */,
+				074B8C5F1E428F60000B76BA /* Book+CoreDataClass.swift in Sources */,
+				074B8C641E42974A000B76BA /* CoreDataStack.swift in Sources */,
+				074B8C601E428F60000B76BA /* Book+CoreDataProperties.swift in Sources */,
+				074B8C661E4297DC000B76BA /* ImageStore.swift in Sources */,
 				074B8C2D1E428EE3000B76BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +545,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		074B8C5A1E428F0B000B76BA /* Books.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				074B8C5B1E428F0B000B76BA /* Books.xcdatamodel */,
+			);
+			currentVersion = 074B8C5B1E428F0B000B76BA /* Books.xcdatamodel */;
+			path = Books.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 074B8C211E428EE3000B76BA /* Project object */;
 }
